@@ -220,7 +220,7 @@
   
   .reward-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 6px 20px;
     text-align: right;
     min-width: 180px;
@@ -541,8 +541,8 @@ const lastDropPill = document.getElementById('lastDropPill');
 const burstArea = document.getElementById('burstArea');
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-const fmt = (n) => n >= 1000000 ? (n/1000000).toFixed(1) + 'm' : (n >= 1000 ? (n/1000).toFixed(0) + 'k' : n);
-const fmtFull = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+const fmt = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const fmtFull = (n) => fmt(n);
 
 async function loadLootData() {
     try {
